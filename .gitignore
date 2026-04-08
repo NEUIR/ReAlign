@@ -1,0 +1,10 @@
+# 任意路径下的 Python 缓存目录及其内容
+__pycache__/
+
+# 仅仓库根目录下的目录（子目录中同名文件夹不会被忽略）
+/emb/
+/log/
+/outputs/
+/result/
+
+*.egg-info/
