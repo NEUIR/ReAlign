@@ -27,6 +27,7 @@ export REALIGN_OPEN_DOC_VQA_CORPUS_ROOT="/path/to/OpenDocVQA-Corpus"
 
 # --- Training: --dataset_path / --corpus_path (shared by Phi-3 and Qwen)
 # dataset can be a path relative to the repo root; corpus is typically the data/ subdir of OpenDocVQA-Corpus
-# Download: https://huggingface.co/datasets/NTT-hil-insight/OpenDocVQA-Corpus/tree/main/data
+# Download: https://huggingface.co/datasets/yanghaoir/ReAlign-Trainset
 export REALIGN_TRAIN_DATASET_PATH="/path/to/ReAlign-Trainset"
+# Download: https://huggingface.co/datasets/NTT-hil-insight/OpenDocVQA-Corpus/tree/main/data
 export REALIGN_TRAIN_CORPUS_PATH="/path/to/OpenDocVQA-Corpus/data"

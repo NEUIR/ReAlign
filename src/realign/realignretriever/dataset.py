@@ -92,13 +92,13 @@ class TrainDataset(Dataset):
 
         _hashed_seed = hash(item + self.trainer.args.seed)
 
-        if 'query_type' in group:
+        if 'd_exist' in group:
             query_text = group['query_text']
-            query_type = group['query_type']
-            describe = group.get('description', '') if query_type == 'image' else ''
+            d_exist = group['d_exist']
+            describe = group.get('description', '') if d_exist == 'yes' else ''
         else:
             query_text = group['query']
-            query_type = 'text'
+            d_exist = 'no'
             describe = ''
         
         if self.data_args.pretrain:
@@ -120,7 +120,7 @@ class TrainDataset(Dataset):
                 except KeyError:
                     relevant_doc_image = Image.new('RGB', (224, 224), color=(255, 255, 255))
 
-        return query_text, relevant_doc_image, query_type, describe
+        return query_text, relevant_doc_image, d_exist, describe
 
 
 class EncodeDataset(Dataset):

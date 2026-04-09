@@ -62,16 +62,16 @@ class TrainCollator:
         if len(features[0]) == 2:
             all_queries = [f[0] for f in features]
             all_images = [f[-1] for f in features]
-            query_types = ['text'] * len(features)
+            d_exists = ['no'] * len(features)
             describes = [''] * len(features)
         else:
             all_queries = [f[0] for f in features]
             all_images = [f[1] for f in features]
-            query_types = [f[2] for f in features]
+            d_exists = [f[2] for f in features]
             describes = [f[3] if len(f) > 3 else '' for f in features]
 
-        query_type_ids = torch.tensor(
-            [1 if qt == 'image' else 0 for qt in query_types],
+        d_exist_ids = torch.tensor(
+            [1 if de == 'yes' else 0 for de in d_exists],
             dtype=torch.long
         )
 
@@ -155,7 +155,7 @@ class TrainCollator:
 
         all_describes_text = []
         for i in range(len(features)):
-            if query_types[i] == 'image' and describes[i] and describes[i].strip():
+            if d_exists[i] == 'yes' and describes[i] and describes[i].strip():
                 all_describes_text.append(describes[i])
             else:
                 all_describes_text.append("N/A")
@@ -181,7 +181,7 @@ class TrainCollator:
             return_tensors='pt',
         )
 
-        return q_collated, d_collated, p_collated, q_describe_collated, query_type_ids
+        return q_collated, d_collated, p_collated, q_describe_collated, d_exist_ids
 
 @dataclass
 class EncodeCollator:

@@ -45,11 +45,11 @@ class ReAlignRetrieverTrainer(Trainer):
 
     def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
         if len(inputs) == 5:
-            query, document, pair, query_describe, query_type_ids = inputs
+            query, document, pair, query_describe, d_exist_ids = inputs
         elif len(inputs) == 3:
             query, document, pair = inputs
             query_describe = None
-            query_type_ids = None
+            d_exist_ids = None
         else:
             raise ValueError(f"Unexpected input format with {len(inputs)} elements")
 
@@ -58,7 +58,7 @@ class ReAlignRetrieverTrainer(Trainer):
             document=document,
             pair=pair,
             query_describe=query_describe,
-            query_type_ids=query_type_ids,
+            d_exist_ids=d_exist_ids,
         ).loss
 
         return loss

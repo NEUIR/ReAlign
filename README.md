@@ -1,6 +1,5 @@
 # ReAlign: Optimizing the Visual Document Retriever with Reasoning-Guided Fine-Grained Alignment
 
-
 <div align="center">
 <p align="center" dir="auto">
 

@@ -52,7 +52,7 @@ class ReAlignRetriever(nn.Module):
                 document: Dict[str, Tensor] = None, 
                 pair: Dict[str, Tensor] = None, 
                 query_describe: Dict[str, Tensor] = None,
-                query_type_ids: Tensor = None,
+                d_exist_ids: Tensor = None,
                 use_cache: bool = True
         ):
         q_reps = self.encode_query(query, use_cache=use_cache) if query else None
@@ -73,8 +73,8 @@ class ReAlignRetriever(nn.Module):
                 p_reps = self._dist_gather_tensor(p_reps)
                 if q_describe_reps is not None:
                     q_describe_reps = self._dist_gather_tensor(q_describe_reps)
-                if query_type_ids is not None:
-                    query_type_ids = self._dist_gather_tensor(query_type_ids)
+                if d_exist_ids is not None:
+                    d_exist_ids = self._dist_gather_tensor(d_exist_ids)
 
             scores = self.compute_similarity(q_reps, p_reps)
             scores = scores.view(q_reps.size(0), -1)
@@ -82,8 +82,8 @@ class ReAlignRetriever(nn.Module):
             target = target * (p_reps.size(0) // q_reps.size(0))
             loss = self.compute_loss(scores / self.temperature, target)
 
-            if query_type_ids is not None:
-                image_mask = (query_type_ids == 1)
+            if d_exist_ids is not None:
+                image_mask = (d_exist_ids == 1)
             else:
                 image_mask = torch.zeros(q_reps.size(0), dtype=torch.bool, device=q_reps.device)
 
