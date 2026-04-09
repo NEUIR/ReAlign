@@ -6,5 +6,8 @@ __pycache__/
 /log/
 /outputs/
 /result/
+/model/
+/dataset/
+/train_data/
 
 *.egg-info/
