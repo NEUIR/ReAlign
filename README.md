@@ -4,7 +4,7 @@
 <p align="center" dir="auto">
 
 [![GitHub](https://img.shields.io/badge/GitHub-ReAlign-black?logo=github)](https://github.com/NEUIR/ReAlign)
-[![arXiv](https://img.shields.io/badge/arXiv-TODO-B31B1B?logo=arxiv&logoColor=white)]()
+[![arXiv](https://img.shields.io/badge/arXiv-2604.07419-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2604.07419)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Collection-orange)](https://huggingface.co/collections/yanghaoir/realign)
 
 </p>
@@ -37,6 +37,7 @@ Ge Yu<sup>1</sup>
 • [Setup](#setup) 
 • [Training](#training) 
 • [Evaluation](#evaluation)
+• [Acknowledgement](#acknowledgement)
 • [Citation](#citation)
 • [Contact](#contact)
 
@@ -132,15 +133,22 @@ bash sh/eval.sh realign-phi3v 0,1,2,3
 bash sh/eval_qwen.sh realign-qwen 0,1,2,3
 ```
 
+## Acknowledgement
+
+Part of our code and data are built upon the following works. We sincerely thank the authors for their contributions.
+
+- [VisRAG](https://github.com/openbmb/visrag)
+- [VDocRAG](https://github.com/nttmdlab-nlp/VDocRAG)
+
 ## Citation
 
 
 ```bibtex
-@article{yang2025realign,
+@article{yang2026realign,
       title={ReAlign: Optimizing the Visual Document Retriever with Reasoning-Guided Fine-Grained Alignment},
       author={Yang, Hao and Ji, Yifan and Xu, Zhipeng and Liu, Zhenghao and Yan, Yukun and Chen, Zulong and Wang, Shuo and Gu, Yu and Yu, Ge},
       year={2026}
-      url={https://arxiv.org/abs/2604.xxxxx}, 
+      url={https://arxiv.org/abs/2604.07419}, 
 }
 ```
 
