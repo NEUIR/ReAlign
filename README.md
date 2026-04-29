@@ -91,11 +91,19 @@ pip install -e .
 
 ### 1. Prepare Data and Model Paths
 
-All absolute paths for data and model checkpoints are centralized in [`config/dir_config.sh`](config/dir_config.sh). Please download the required assets and set the paths according to the instructions in that file.
+Use the following command to download all required data, including model checkpoints, training set, and evaluation set:
 
 ```bash
-vim config/dir_config.sh
+huggingface-cli download --repo-type dataset yanghaoir/ReAlign-Set --local-dir ./dataset
 ```
+
+By default, the paths in this file work out of the box and no changes are needed. If you need to customize model or dataset locations, edit [`config/dir_config.sh`](config/dir_config.sh), which looks like:
+
+```bash
+export REALIGN_TRAIN_DATASET_PATH="path/to/train_data"
+```
+
+This file does not need to be run manually — it is sourced automatically during training and evaluation.
 
 ### 2. Create Log Directory
 
