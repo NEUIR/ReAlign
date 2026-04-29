@@ -63,6 +63,7 @@ We have made the following resources available on 🤗[ReAlign collection](https
 | ReAlign-Phi3v    | The visual document retriever based on [Phi-3-vision-128k-instruct](https://huggingface.co/microsoft/Phi-3-vision-128k-instruct)      | 🤗[ReAlign-Phi3v](https://huggingface.co/yanghaoir/ReAlign-Phi3v) |
 | ReAlign-Qwen      | The visual document retriever based on [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct)              | 🤗[ReAlign-Qwen](https://huggingface.co/yanghaoir/ReAlign-Qwen) |
 | Training Data         | The data used to train the ReAlign retriever             | 🤗[ReAlign-Trainset](https://huggingface.co/datasets/yanghaoir/ReAlign-Trainset) |
+| ReAlign-Set           | All-in-one package: model weights, training set, and evaluation set | 🤗[ReAlign-Set](https://huggingface.co/datasets/yanghaoir/ReAlign-Set) |
 
 ## Setup
 
