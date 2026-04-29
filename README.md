@@ -105,13 +105,28 @@ export REALIGN_TRAIN_DATASET_PATH="path/to/train_data"
 
 This file does not need to be run manually — it is sourced automatically during training and evaluation.
 
-### 2. Create Log Directory
+### 2. Build Synthetic Training Data (Optional)
+
+If you want to reproduce the data construction pipeline from scratch, run the following steps after downloading the dataset:
+
+```bash
+# Step 1: Extract corpus images from parquet shards
+python src/realign/data_construction/data_unzip.py
+
+# Step 2: Call the grounding model to build synthetic annotations
+export DASHSCOPE_API_KEY="your-key"
+python src/realign/data_construction/build_from_parquet.py
+```
+
+The output CSV will be saved to `synthetic_data/OpenDocVQA-Query-1.csv`. The pre-built training data is already included in `dataset/train_data/train.parquet`, so this step can be skipped if you do not need to regenerate it.
+
+### 3. Create Log Directory
 
 ```bash
 mkdir -p log
 ```
 
-### 3. Run Training
+### 4. Run Training
 
 **Phi3 Vision:**
 
