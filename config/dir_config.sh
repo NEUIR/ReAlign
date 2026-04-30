@@ -16,7 +16,7 @@ export REALIGN_PHI3_LORA_PRETRAINED_DIR="${_REALIGN_ROOT}/dataset/VDocRetriever-
 
 # --- Qwen2.5-VL-7B (MODEL_PATH for Qwen training and QWEN in encode_qwen scripts)
 # Download: https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct
-export REALIGN_QWEN_MODEL_DIR="Qwen2.5-VL-7B-Instruct"
+export REALIGN_QWEN_MODEL_DIR="${_REALIGN_ROOT}/dataset/Qwen2.5-VL-7B-Instruct"
 
 # --- Qwen training: optional LoRA base path (leave empty to skip loading pretrained LoRA)
 export REALIGN_QWEN_LORA_PATH=""
