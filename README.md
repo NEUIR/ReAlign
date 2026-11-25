@@ -171,7 +171,7 @@ Part of our code and data are built upon the following works. We sincerely thank
 @article{yang2026realign,
       title={ReAlign: Optimizing the Visual Document Retriever with Reasoning-Guided Fine-Grained Alignment},
       author={Yang, Hao and Ji, Yifan and Xu, Zhipeng and Liu, Zhenghao and Yan, Yukun and Chen, Zulong and Wang, Shuo and Gu, Yu and Yu, Ge},
-      year={2026}
+      year={2026},
       url={https://arxiv.org/abs/2604.07419}, 
 }
 ```
