@@ -4,6 +4,7 @@
 <p align="center" dir="auto">
 
 [![GitHub](https://img.shields.io/badge/GitHub-ReAlign-black?logo=github)](https://github.com/NEUIR/ReAlign)
+[![SIGIR 2026](https://img.shields.io/badge/SIGIR%202026-ACM-005A9C)](https://doi.org/10.1145/3805712.3809602)
 [![arXiv](https://img.shields.io/badge/arXiv-2604.07419-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2604.07419)
 [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Collection-orange)](https://huggingface.co/collections/yanghaoir/realign)
 
@@ -168,11 +169,15 @@ Part of our code and data are built upon the following works. We sincerely thank
 
 
 ```bibtex
-@article{yang2026realign,
-      title={ReAlign: Optimizing the Visual Document Retriever with Reasoning-Guided Fine-Grained Alignment},
+@inproceedings{yang2026realign,
+      title={{ReAlign}: Optimizing the Visual Document Retriever with Reasoning-Guided Fine-Grained Alignment},
       author={Yang, Hao and Ji, Yifan and Xu, Zhipeng and Liu, Zhenghao and Yan, Yukun and Chen, Zulong and Wang, Shuo and Gu, Yu and Yu, Ge},
+      booktitle={Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval},
       year={2026},
-      url={https://arxiv.org/abs/2604.07419}, 
+      pages={2162--2173},
+      publisher={Association for Computing Machinery},
+      doi={10.1145/3805712.3809602},
+      url={https://doi.org/10.1145/3805712.3809602},
 }
 ```
 
